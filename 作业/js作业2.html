@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.a{
+			margin-top: 30px; 
+		}
+	</style>
+</head>
+<body>
+	<input type="test" id="ku" >
+	<input type="button" id="tj" value="添加">
+	<ol>
+	</ol>
+	<div class="a">
+		<input type="button" id="qk" value="清空列表">
+	</div>
+	<script src="libs/jquery-1.12.4.js"></script>
+	<script>
+		$('#tj').click(function () {
+			if($('#ku').val()!=''){
+				$("ol").prepend('<li>'+"<span>"+'&nbsp;'+'&times'+'</span>'+'&nbsp;'+$('#ku').val()+'</li>');
+				$('span').click(function () {
+					$(this).parent().remove();
+				})
+			}else{
+				alert('还没填写内容');
+			}
+		})
+		$('#qk').click(function () {
+			$('ol').empty();
+		})
+
+	</script>
+</body>
+</html>
